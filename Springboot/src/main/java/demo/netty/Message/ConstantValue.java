@@ -1,6 +1,6 @@
 package demo.netty.Message;
 
-public class ConstantValue {
+public class ConstantValue<STANDARD_TASK_STATUS_FINISH> {
     public static final int HEADER_FLAG = 0x484B5024; // "HKP$"
 
     public static final int SUCCESS = 200;
@@ -49,8 +49,11 @@ public class ConstantValue {
     public static final short IOACT = 0X0080;
     public static final short IOACTREPLY = 0x0081;
 
-
-
+    //agv 实时状态
+    public byte STANDARD_TASK_STATUS_FINISH                    = 1;            ///< 任务完成
+    public byte STANDARD_TASK_STATUS_RUNNING                   = 2;            ///< 任务执行中
+    public byte STANDARD_TASK_STATUS_EXCEPTION                 = 3;            ///< 任务异常
+    public byte STANDARD_TASK_STATUS_IDLE                      = 4;            ///< 任务空闲
 
 
 }

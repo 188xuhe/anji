@@ -2,7 +2,7 @@ package demo.netty.Message;
 
 import demo.netty.serial.Serializer;
 
-public class BasicMoveRequest extends Serializer {
+public class  BasicMoveRequest extends Serializer {
     private short agvid;
     private short task_id;
     private byte sub_task_id;

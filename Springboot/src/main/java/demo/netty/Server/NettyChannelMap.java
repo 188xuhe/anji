@@ -17,6 +17,14 @@ public class NettyChannelMap  {
         return onlineMap.get(clientId);
     }
 
+    public static short getIdFromChannel(Channel channel){
+        for(ConcurrentHashMap.Entry entry : onlineMap.entrySet()){
+            if(entry.getValue()==channel)
+                return (short) entry.getKey();
+        }
+        return 0;
+    }
+
     public static boolean containsChannnel(short clientId){
         return onlineMap.containsKey(clientId);
     }

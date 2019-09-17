@@ -125,8 +125,8 @@ public abstract class Serializer {
 		return readBuffer.readDouble();
 	}
 	
-	public String readString() {
-		int size = readBuffer.readShort();
+	public String readString(int size) {
+
 		if (size <= 0) {
 			return "";
 		}
@@ -173,7 +173,7 @@ public abstract class Serializer {
 		} else if (clz == double.class || clz == Double.class){
 			t = readDouble();
 		} else if (clz == String.class ){
-			t = readString();
+			t = readString(0);
 		} else if (Serializer.class.isAssignableFrom(clz)){
 			try {
 				byte hasObject = this.readBuffer.readByte();
